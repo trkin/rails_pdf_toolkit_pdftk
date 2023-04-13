@@ -1,24 +1,28 @@
-# README
+# Rails PDF Toolkit Wicked Pdfkit Wkhtmltopdf
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+We can manipulate pdf with PDF Toolkit and generate from docs using Wicked.
 
-Things you may want to cover:
+To create PDF using ruby code you can use https://github.com/trkin/rails_pdf_prawn
 
-* Ruby version
+## PDF Tollkit
 
-* System dependencies
+We need to use old gem https://github.com/blambeau/pdf-toolkit
+It has dependency `pdftk` available on linux, mac and windows.
 
-* Configuration
+On ubuntu
 
-* Database creation
+```
+sudo add-apt-repository ppa:malteworld/ppa
+sudo apt update
+sudo apt install pdftk
+```
 
-* Database initialization
+Some commands https://www.pdflabs.com/docs/pdftk-cli-examples/
 
-* How to run the test suite
+```
+# split pdf into multiple pages
+pdftk in.pdf burst
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# join
+pdftk 1.pdf 2.pdf cat output 3.pdf
+```
